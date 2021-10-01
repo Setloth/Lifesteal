@@ -1,0 +1,139 @@
+#################################################################################################################
+#---------------------------------------------------------------------------------------------------------------#
+#| Read Me                                                                                                     |#
+#|                                                                                                             |#
+#| Most objects in the configuration that can be toggled work like the following:                              |#
+#                                                                                                              |#
+#  dummy-object:                                                                                               |#
+#    enabled: false                                                                                            |#
+#    value: "some value"                                                                                       |#
+#                                                                                                              |#
+#| the "enabled" can be set to either "true" or "false", this decides if the selection will be used or not.    |#
+#| the "value" is what the section will be set to.                                                             |#
+#|                                                                                                             |#                                                                                                            |#
+#---------------------------------------------------------------------------------------------------------------#
+#################################################################################################################
+
+# this section configures the gates for the core life steal aspects of the plugin
+Health:
+
+  multiplier:
+    gain:
+      enabled: false
+      value: 1
+    loss:
+      enabled: false
+      value: 1
+
+    # gain multiplier determines the increased amount of hp that the player will receive after getting a kill
+
+    # loss multiplier determines the increased amount of hp that the player will lose after dying
+
+  upper-limit:
+    enabled: true
+    value: 100
+
+  # the upper health limit is the cap for how much a player's health can increase, setting this will allow a maximum amount of health to be reached.
+
+  lower-limit:
+    enabled: true
+    value: 1
+
+  # the lower health limit refers to when the player's lives goes below the limit
+  # configured in "Out-Of-Lives"
+
+# this section defines values for on death actions
+Kills:
+
+  # configure the messages for the victim
+  victim:
+    chat-message:
+      enabled: true
+      value: "&6You have been killed by &e%attacker%&6. Lives: &c%victim-lives%"
+
+    # chat-message value determines the message sent into chat to the victim
+
+
+  # configure the messages for the attacker
+  attacker:
+    chat-message:
+      enabled: true
+      value: "&6You killed by &e%victim%&6. Lives: &c%attacker-lives%"
+
+    # chat-message value determines the message sent into chat to the attacker
+
+  death-message:
+    enabled: true
+    value: "&6%victim% &e[%victim-lives%]&6 was killed by %attacker% &e[%attacker-lives%]"
+  # death-message defines the message that sends in chat for all players, disabling this will use the default options for the server.
+  # Note: to turn off death messages, use the command "/gamerule showDeathMessages false"
+
+
+# this section defines values for when a player reaches the lower threshold for lives
+Out-Of-Lives:
+
+  # when a player runs out of lives, they will be put into spectator gamemode, below are some more options for it.
+
+  message:
+    enabled: true
+    value: "&c&lYou have run out of lives!"
+
+  # message refers to the message the player will be sent when their lives are out
+
+  command:
+    enabled: false
+    value:
+      - "say %player% has run out of lives"
+  # command refers to a list of console commands that will be run when a player runs out of lives
+
+  force-spectator: true
+  # force-spectator refers to if the player will be put into gamemode spectator when they run of out lives
+  # Note: It is suggested that the force-spectator be kept to true, unless you want to override it with a command instead, or it is interfering with some aspect of your server
+
+Crafting:
+  enabled: false
+  lives: 1
+  # determines how many lives the crafted item will give to the player who uses it
+
+  # for item, https://www.spigotmc.org/wiki/itemstack-serialization/, will show you a little more info on how to format the item
+  item:
+    ==: org.bukkit.inventory.ItemStack
+    type: REDSTONE
+    # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
+    amount: 1
+    meta:
+      ==: ItemMeta
+      meta-type: UNSPECIFIC
+      display-name: "§c§lHeart"
+      lore:
+        - "§cLifesteal Heart"
+
+  # this is were it gets confusing, so bear with me
+
+  shape:
+    - " A "
+    - "ABA"
+    - " C "
+  # shape defines the crafting shape. Essentially, anywhere with a space is no item
+  # the spaces with a letter will match the items defined later in the config, the letter must match what you set later
+  # example: you put " A " on the first row, so it will be [air] [item A] [air]
+  # item A will refer to the item below that has A as its key
+  # there can only be 3 items in this list, as there are only max 3 rows in crafting, so if you provide a 4th, it will not be counted.
+
+  # ok did you get all that, now on to the items
+
+  ingredients:
+    A:
+      ==: org.bukkit.inventory.ItemStack
+      type: STICK
+      amount: 1
+    B:
+      ==: org.bukkit.inventory.ItemStack
+      type: REDSTONE
+      amount: 1
+    C:
+      ==: org.bukkit.inventory.ItemStack
+      type: GLOWSTONE_DUST
+      amount: 1
+
+    # you can have more than A,B,C, but you have to make sure you input that into the crafting shape

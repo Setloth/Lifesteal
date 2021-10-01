@@ -1,0 +1,30 @@
+name: Lifesteal
+version: 1.5.0
+main: page.echology.lifesteal.Lifesteal
+api-version: 1.17
+author: Echology
+website: https://www.echology.page
+commands:
+  lifesteal:
+    aliases:
+      - steal
+    permission: lifesteal.command
+    usage: "§e§lLifesteal Command Usage\n§6/lifesteal reload §7Reloads the configuration\n§6/lifesteal lives §7Gets the amount of lives that you have\n§6/lifesteal lives {player} §7Gets the amount of lives for the specified player\n§6/lifesteal lives {player} {number} §7Sets the lives of the specified player\n§6/lifesteal lives {player} add {number} §7Adds to the lives of the specified player\n§6/lifesteal lives {player} subtract {number} §7Subtracts from the lives of the specified player\n§6/lifesteal help §7Shows this message"
+
+permissions:
+  lifesteal.*:
+    children:
+      - lifesteal.command
+
+  lifesteal.command:
+    children:
+      - lifesteal.command.reload
+      - lifesteal.command.lives
+      - lifesteal.command.lives.set
+    description: Allows top access to the /lifesteal command, further access is granted with its children
+  lifesteal.command.reload:
+    description: Allows access to /lifesteal reload
+  lifesteal.command.lives:
+    description: Allows access to /lifesteal lives
+  lifesteal.command.lives.set:
+    description: Allows you to set someone's lives via /lifesteal lives {player} [(add|subtract)] {number}
