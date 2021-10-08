@@ -1,21 +1,25 @@
-#################################################################################################################
-#---------------------------------------------------------------------------------------------------------------#
-#| Read Me                                                                                                     |#
-#|                                                                                                             |#
-#| Most objects in the configuration that can be toggled work like the following:                              |#
-#                                                                                                              |#
-#  dummy-object:                                                                                               |#
-#    enabled: false                                                                                            |#
-#    value: "some value"                                                                                       |#
-#                                                                                                              |#
-#| the "enabled" can be set to either "true" or "false", this decides if the selection will be used or not.    |#
-#| the "value" is what the section will be set to.                                                             |#
-#|                                                                                                             |#                                                                                                            |#
-#---------------------------------------------------------------------------------------------------------------#
-#################################################################################################################
+################################################################################################################
+#-------------------------------------------------------------------------------------------------------------#|
+# Read Me                                                                                                     #|
+#                                                                                                             #|
+# Most objects in the configuration that can be toggled work like the following:                              #|
+                                                                                                              #|
+dummy-object:                                                                                                 #|
+  enabled: false                                                                                              #|
+  value: "some value"                                                                                         #|
+                                                                                                              #|
+# the "enabled" can be set to either "true" or "false", this decides if the selection will be used or not.    #|
+# the "value" is what the section will be set to.                                                             #|
+#                                                                                                             #|
+#-------------------------------------------------------------------------------------------------------------#|
+################################################################################################################
 
+# NOTE: If you require support setting up the plugin, reach out to me via the discord server (which you can find on the Minehut dashboard via the "Your Stuff" tab, and by hitting "Get Support" on the plugin or by visiting https://www.echology.page/socials/discord)
 # this section configures the gates for the core life steal aspects of the plugin
+
 Health:
+
+  # This section is designated to the configuration based around Health values and aspects of the plugin.
 
   multiplier:
     gain:
@@ -45,6 +49,8 @@ Health:
 # this section defines values for on death actions
 Kills:
 
+  # This section is designated to the configuration of the kill-based aspects of the plugin.
+
   # configure the messages for the victim
   victim:
     chat-message:
@@ -72,7 +78,7 @@ Kills:
 # this section defines values for when a player reaches the lower threshold for lives
 Out-Of-Lives:
 
-  # when a player runs out of lives, they will be put into spectator gamemode, below are some more options for it.
+  # This section is designated to the configuration of values that are used after someone runs out of lives.
 
   message:
     enabled: true
@@ -91,16 +97,18 @@ Out-Of-Lives:
   # Note: It is suggested that the force-spectator be kept to true, unless you want to override it with a command instead, or it is interfering with some aspect of your server
 
 Crafting:
+
+  # This section is designated to the configuration of crafting/recipe values for the plugin.
+
   enabled: false
   lives: 1
   # determines how many lives the crafted item will give to the player who uses it
 
-  # for item, https://www.spigotmc.org/wiki/itemstack-serialization/, will show you a little more info on how to format the item
+  # for items [anything with "==: org.bukkit.inventory.ItemStack"], https://www.spigotmc.org/wiki/itemstack-serialization/, will show you a little more info on how to format the item
   item:
     ==: org.bukkit.inventory.ItemStack
     type: REDSTONE
-    # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
-    amount: 1
+    # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html gives a list of all the items by material type. NOTE: This list may not be 100% accurate, as sometimes bukkit is dumb.
     meta:
       ==: ItemMeta
       meta-type: UNSPECIFIC
@@ -120,20 +128,28 @@ Crafting:
   # item A will refer to the item below that has A as its key
   # there can only be 3 items in this list, as there are only max 3 rows in crafting, so if you provide a 4th, it will not be counted.
 
-  # ok did you get all that, now on to the items
+  # again this is a little complicated, but think of it as the slots in the crafting table, so if you put "A  " for the first row, then there will be Item A (see below) in the first slot of the crafting inventory, followed by two empty spaces of air.
+
+  # the items for the recipe are configured below, remember, the key that you give them (ex. A) is what will be in the shape above.
+  # You are free to use your own keys, like "O", "E" or "Z", but remember that you need to update these values for the shape with whatever you use here.
 
   ingredients:
     A:
       ==: org.bukkit.inventory.ItemStack
-      type: STICK
-      amount: 1
+      type: DIAMOND_BLOCK
     B:
       ==: org.bukkit.inventory.ItemStack
       type: REDSTONE
-      amount: 1
     C:
       ==: org.bukkit.inventory.ItemStack
       type: GLOWSTONE_DUST
-      amount: 1
 
-    # you can have more than A,B,C, but you have to make sure you input that into the crafting shape
+  # again, these are the ingredients that will be in the recipe, their key (exmaple: 'A') is what relates to their poisiton in the "shape:" section.
+
+  # the default recipe uses DIAMOND_BLOCK, REDSTONE, GLOWSTONE_DUST
+  # it looks like:
+  # [AIR] [DIAMOND_BLOCK] [AIR]
+  # [DIAMOND_BLOCK] [REDSTONE] [DIAMOND_BLOCK]
+  # [AIR] [GLOWSTONE_DUST] [AIR]
+
+  # hopefully this makes sense, if you have trouble, do not feel scared to ask in the Discord server (#support) -> https://www.echology.page/socials/discord
