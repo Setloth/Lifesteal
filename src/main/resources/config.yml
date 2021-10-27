@@ -107,6 +107,7 @@ Crafting:
   # for items [anything with "==: org.bukkit.inventory.ItemStack"], https://www.spigotmc.org/wiki/itemstack-serialization/, will show you a little more info on how to format the item
   item:
     ==: org.bukkit.inventory.ItemStack
+    v: 2730 # i wouldn't edit this manually.
     type: REDSTONE
     # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html gives a list of all the items by material type. NOTE: This list may not be 100% accurate, as sometimes bukkit is dumb.
     meta:
@@ -115,6 +116,7 @@ Crafting:
       display-name: "§c§lHeart"
       lore:
         - "§cLifesteal Heart"
+        - "§7Right click to use"
 
   # this is were it gets confusing, so bear with me
 
@@ -136,12 +138,15 @@ Crafting:
   ingredients:
     A:
       ==: org.bukkit.inventory.ItemStack
+      v: 2730 # i wouldn't edit this manually.
       type: DIAMOND_BLOCK
     B:
       ==: org.bukkit.inventory.ItemStack
+      v: 2730 # i wouldn't edit this manually.
       type: REDSTONE
     C:
       ==: org.bukkit.inventory.ItemStack
+      v: 2730 # i've said it 3 times already, just don't edit this.
       type: GLOWSTONE_DUST
 
   # again, these are the ingredients that will be in the recipe, their key (exmaple: 'A') is what relates to their poisiton in the "shape:" section.
