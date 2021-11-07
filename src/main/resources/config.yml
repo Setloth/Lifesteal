@@ -3,11 +3,11 @@
 # Read Me                                                                                                     #|
 #                                                                                                             #|
 # Most objects in the configuration that can be toggled work like the following:                              #|
-                                                                                                              #|
-dummy-object:                                                                                                 #|
-  enabled: false                                                                                              #|
-  value: "some value"                                                                                         #|
-                                                                                                              #|
+#                                                                                                             #|
+#|        dummy-object:                                                                                       #|
+#|          enabled: false                                                                                    #|
+#|          value: "some value"                                                                               #|
+#                                                                                                             #|
 # the "enabled" can be set to either "true" or "false", this decides if the selection will be used or not.    #|
 # the "value" is what the section will be set to.                                                             #|
 #                                                                                                             #|
@@ -15,7 +15,7 @@ dummy-object:                                                                   
 ################################################################################################################
 
 # NOTE: If you require support setting up the plugin, reach out to me via the discord server (which you can find on the Minehut dashboard via the "Your Stuff" tab, and by hitting "Get Support" on the plugin or by visiting https://www.echology.page/socials/discord)
-# this section configures the gates for the core life steal aspects of the plugin
+# this section configures the gates for the core lifesteal aspects of the plugin
 
 Health:
 
