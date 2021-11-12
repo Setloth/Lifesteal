@@ -1,9 +1,10 @@
 name: Lifesteal
-version: 1.6.1
+version: 1.6.9
 main: page.echology.lifesteal.Lifesteal
 api-version: 1.17
 author: Echology
 website: https://www.echology.page
+description: A Minehut Market product that adds the combat-based lifesteal system to your server! Gain lives by getting kills, lose lives by being killed.
 commands:
   lifesteal:
     aliases:
