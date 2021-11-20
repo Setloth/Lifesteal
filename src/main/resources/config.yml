@@ -1,6 +1,6 @@
 ################################################################################################################
 #-------------------------------------------------------------------------------------------------------------#|
-# Read Me                                                                                                     #|
+# Read Me - Notes about configuration                                                                         #|
 #                                                                                                             #|
 # Most objects in the configuration that can be toggled work like the following:                              #|
 #                                                                                                             #|
@@ -8,26 +8,32 @@
 #|          enabled: false                                                                                    #|
 #|          value: "some value"                                                                               #|
 #                                                                                                             #|
-# the "enabled" can be set to either "true" or "false", this decides if the selection will be used or not.    #|
+# the "enabled" can be set to either "true" or "false", this decides if the section will be used or not.      #|
 # the "value" is what the section will be set to.                                                             #|
 #                                                                                                             #|
 #-------------------------------------------------------------------------------------------------------------#|
 ################################################################################################################
 
 # NOTE: If you require support setting up the plugin, reach out to me via the discord server (which you can find on the Minehut dashboard via the "Your Stuff" tab, and by hitting "Get Support" on the plugin or by visiting https://www.echology.page/socials/discord)
-# this section configures the gates for the core lifesteal aspects of the plugin
 
 Health:
 
   # This section is designated to the configuration based around Health values and aspects of the plugin.
 
-  multiplier:
-    gain:
+  multiplier: # a multiplier for the amount of lives gained or lost
+    gain: # multiplier for lives gained
       enabled: false
+      # determines if the multiplier should be counted or not
+
       value: 1
-    loss:
+      # amount to multiply by
+
+    loss: # multiplier for lives lost
       enabled: false
+      # determines if the multiplier should be counted or not
+
       value: 1
+      # amount to multiply by
 
     # gain multiplier determines the increased amount of hp that the player will receive after getting a kill
 
@@ -35,13 +41,17 @@ Health:
 
   upper-limit:
     enabled: true
+    # determines if the upper limit will be checked or not
     value: 100
+    # value of the upper health limit
 
   # the upper health limit is the cap for how much a player's health can increase, setting this will allow a maximum amount of health to be reached.
 
   lower-limit:
     enabled: true
+    # determines if the lower limit will be checked or not
     value: 1
+    # value of the lower health limit
 
   # the lower health limit refers to when the player's lives goes below the limit
   # configured in "Out-Of-Lives"
@@ -51,28 +61,58 @@ Kills:
 
   # This section is designated to the configuration of the kill-based aspects of the plugin.
 
-  # configure the messages for the victim
-  victim:
-    chat-message:
-      enabled: true
-      value: "&6You have been killed by &e%attacker%&6. Lives: &c%victim-lives%"
+  pvp:
 
-    # chat-message value determines the message sent into chat to the victim
+    # this section is used when PvP is the reason for death
+    # this section will only be used if a player dies because of another player
 
-
-  # configure the messages for the attacker
-  attacker:
-    chat-message:
-      enabled: true
-      value: "&6You killed by &e%victim%&6. Lives: &c%attacker-lives%"
-
-    # chat-message value determines the message sent into chat to the attacker
-
-  death-message:
     enabled: true
-    value: "&6%victim% &e[%victim-lives%]&6 was killed by %attacker% &e[%attacker-lives%]"
-  # death-message defines the message that sends in chat for all players, disabling this will use the default options for the server.
-  # Note: to turn off death messages, use the command "/gamerule showDeathMessages false"
+    # determines if lifesteal will run on pvp
+
+    # configure the messages for the victim
+    victim:
+      chat-message:
+        enabled: true
+        value: "&6You have been killed by &e%attacker%&6. Lives: &c%victim-lives%"
+
+      # chat-message value determines the message sent into chat to the victim
+
+
+    # configure the messages for the attacker
+    attacker:
+      chat-message:
+        enabled: true
+        value: "&6You killed by &e%victim%&6. Lives: &c%attacker-lives%"
+
+      # chat-message value determines the message sent into chat to the attacker
+
+    death-message:
+      enabled: true
+      value: "&6%victim% &e[%victim-lives%]&6 was killed by %attacker% &e[%attacker-lives%]"
+    # death-message defines the message that sends in chat for all players, disabling this will use the default options for the server.
+    # Note: to turn off death messages, use the command "/gamerule showDeathMessages false"
+
+  other:
+
+    # this section is used when the reason for death is not due to a player
+    # including mobs, fall damage, etc.
+
+    enabled: false
+    # determines if lifesteal will run on other death causes
+
+    # configure the messages for the victim
+    victim:
+      chat-message:
+        enabled: true
+        value: "&6You have died. Lives: &c%victim-lives%"
+
+      # chat-message value determines the message sent into chat to the victim
+
+    death-message:
+      enabled: true
+      value: "&6%victim% &e[%victim-lives%]&6 died"
+    # death-message defines the message that sends in chat for all players, disabling this will use the default options for the server.
+    # Note: to turn off death messages, use the command "/gamerule showDeathMessages false"
 
 
 # this section defines values for when a player reaches the lower threshold for lives
@@ -136,7 +176,7 @@ Crafting:
   # You are free to use your own keys, like "O", "E" or "Z", but remember that you need to update these values for the shape with whatever you use here.
 
   ingredients:
-    A:
+    A: # this is the first item, remember that you can change "A", "B" and "C" to whatever you want ( as long as it is one character ), just remember to change the values in the shape section above
       ==: org.bukkit.inventory.ItemStack
       v: 2730 # i wouldn't edit this manually.
       type: DIAMOND_BLOCK
@@ -149,6 +189,9 @@ Crafting:
       v: 2730 # i've said it 3 times already, just don't edit this.
       type: GLOWSTONE_DUST
 
+    # you can also add more down here if you wish to have more
+    # you can also delete ones, you do not have to have 3, but just make sure you update your shape section :)
+
   # again, these are the ingredients that will be in the recipe, their key (exmaple: 'A') is what relates to their poisiton in the "shape:" section.
 
   # the default recipe uses DIAMOND_BLOCK, REDSTONE, GLOWSTONE_DUST
@@ -158,3 +201,8 @@ Crafting:
   # [AIR] [GLOWSTONE_DUST] [AIR]
 
   # hopefully this makes sense, if you have trouble, do not feel scared to ask in the Discord server (#support) -> https://www.echology.page/socials/discord
+
+
+
+
+# Hi! You're at the end of the configuration section, if you read all the way to here you must have learned quite a bit.
