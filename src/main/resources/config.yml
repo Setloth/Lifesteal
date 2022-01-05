@@ -87,7 +87,7 @@ Kills:
     attacker:
       chat-message:
         enabled: true
-        value: "&6You killed by &e%victim%&6. Lives: &c%attacker-lives%"
+        value: "&6You killed &e%victim%&6. Lives: &c%attacker-lives%"
 
       # chat-message value determines the message sent into chat to the attacker
 
