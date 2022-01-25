@@ -226,13 +226,13 @@ You can create as many sections as you wish in the `ingredients` section and you
 2. If you make an item here, it should be included in your shape, unused items will cause problems registering your recipe
 3. Each property name has to be one character, no more:
 
-  Valid property names:
-    - `A`, `J`, `C`, `0`, `5`
+    Valid property names: `A`, `J`, `C`, `0`, `5` and anything that is one character text
 
-  Invalid property names:
-    - `Wo`, `Item`, `item`, ` `, `_____`
+    Invalid property names: `Wo`, `Item`, `item`, ` `, `_____` and anything that is not a one character text
 
 4. Make sure your section follows the correct structure for an item, once again, reference [spigot's docs](https://www.spigotmc.org/wiki/itemstack-serialization/) for more info
+
+For property names, I recommend that you use letters of the english alphabet: A,B,C,D,E,F...
 
 Once you have made your ingredients section, then make sure to update your `shape` section using those property names
 
@@ -242,4 +242,3 @@ And that is all for the configuration of the config file
 
 If you continue to have problems configuring your plugin, make sure to read each part of this and look at the comments within the config file, if all else fails, join the discord server [here](https://www.echology.page/socials/discord)
 
-- Thanks
