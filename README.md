@@ -225,10 +225,13 @@ You can create as many sections as you wish in the `ingredients` section and you
 1. You can not have two of the same property name, for example, you can not have two sections with the property name of `B`
 2. If you make an item here, it should be included in your shape, unused items will cause problems registering your recipe
 3. Each property name has to be one character, no more:
+
   Valid property names:
-  - `A`, `J`, `C`, `0`, `5`
+    - `A`, `J`, `C`, `0`, `5`
+
   Invalid property names:
-  - `Wo`, `Item`, `item`, ` `, `_____`
+    - `Wo`, `Item`, `item`, ` `, `_____`
+
 4. Make sure your section follows the correct structure for an item, once again, reference [spigot's docs](https://www.spigotmc.org/wiki/itemstack-serialization/) for more info
 
 Once you have made your ingredients section, then make sure to update your `shape` section using those property names
