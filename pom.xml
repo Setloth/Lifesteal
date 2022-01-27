@@ -6,7 +6,7 @@
 
     <groupId>page.echology</groupId>
     <artifactId>Lifesteal</artifactId>
-    <version>4.2.0+3</version>
+    <version>5.1.0</version>
     <packaging>jar</packaging>
 
     <name>Lifesteal</name>
@@ -65,7 +65,7 @@
         <dependency>
             <groupId>com.github.Echological</groupId>
             <artifactId>MinehutService</artifactId>
-            <version>1.2</version>
+            <version>1.5.3</version>
             <scope>compile</scope>
         </dependency>
 

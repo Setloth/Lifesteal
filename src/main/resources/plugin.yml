@@ -1,5 +1,5 @@
 name: Lifesteal
-version: 4.2.0+3
+version: 5.1.0
 main: page.echology.lifesteal.Lifesteal
 api-version: 1.17
 author: Echology
@@ -10,7 +10,7 @@ commands:
     aliases:
       - steal
       - lives
-    usage: "&e&lLifesteal Command Usage\n&6/lifesteal reload &7Reloads the configuration\n&6/lifesteal withdraw {number} &7Withdraws {number} amount of lives into a heart item &o(requires crafting to be enabled)\n&6/lifesteal lives &7Gets the amount of lives that you have\n&6/lifesteal lives {player} &7Gets the amount of lives for the specified player\n&6/lifesteal lives {player} {number} &7Sets the lives of the specified player\n&6/lifesteal lives {player} add {number} &7Adds to the lives of the specified player\n&6/lifesteal lives {player} subtract {number} &7Subtracts from the lives of the specified player\n&6/lifesteal help &7Shows this message"
+    usage: /lifesteal help
 
 permissions:
   lifesteal.*:
