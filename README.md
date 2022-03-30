@@ -8,7 +8,7 @@ Lifesteal is a [Minehut Product](https://www.echology.page/socials/lifesteal) th
 
 ## Wiki
 
-View the wiki [here](https://github.com/Echological/Lifesteal-MH/wiki)
+View the wiki [here](https://github.com/Echological/Lifesteal/wiki)
 
 ## Support
 
