@@ -2,7 +2,7 @@
 
 Lifesteal is a [Minehut Product](https://www.echology.page/socials/lifesteal) that brings Lifesteal to your server!
 
-> Works for **Paper** servers on **1.17 - 1.18**
+> Works for **Paper/Spigot** servers on **1.17 - 1.19**
 >
 > This product can only be used on a **[Minehut](https://minehut.com) server**
 
