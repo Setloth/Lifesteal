@@ -26,36 +26,22 @@ Health:
   # This section is designated to the configuration based around Health values and aspects of the plugin.
 
   multiplier: # a multiplier for the amount of lives gained or lost
-    gain: # multiplier for lives gained
-      enabled: false
-      # determines if the multiplier should be counted or not
-
-      value: 1
+    gain: 1
       # amount to multiply by
 
-    loss: # multiplier for lives lost
-      enabled: false
-      # determines if the multiplier should be counted or not
-
-      value: 1
+    loss: 1
       # amount to multiply by
 
     # gain multiplier determines the increased amount of hp that the player will receive after getting a kill
 
     # loss multiplier determines the increased amount of hp that the player will lose after dying
 
-  upper-limit:
-    enabled: true
-    # determines if the upper limit will be checked or not
-    value: 100
+  upper-limit: 100
     # value of the upper health limit
 
   # the upper health limit is the cap for how much a player's health can increase, setting this will allow a maximum amount of health to be reached.
 
-  lower-limit:
-    enabled: true
-    # determines if the lower limit will be checked or not
-    value: 1
+  lower-limit: 1
     # value of the lower health limit
 
   # the lower health limit refers to when the player's lives goes below the limit
@@ -75,25 +61,17 @@ Kills:
     # determines if lifesteal will run on pvp
 
     # configure the messages for the victim
-    victim:
-      chat-message:
-        enabled: true
-        value: "&6You have been killed by &e%attacker%&6. Lives: &c%victim-lives%"
+    victim: "&6You have been killed by &e%attacker%&6. Lives: &c%victim-lives%"
 
-      # chat-message value determines the message sent into chat to the victim
+      #  determines the message sent into chat to the victim
 
 
     # configure the messages for the attacker
-    attacker:
-      chat-message:
-        enabled: true
-        value: "&6You killed &e%victim%&6. Lives: &c%attacker-lives%"
+    attacker: "&6You killed &e%victim%&6. Lives: &c%attacker-lives%"
 
-      # chat-message value determines the message sent into chat to the attacker
+      # determines the message sent into chat to the attacker
 
-    death-message:
-      enabled: true
-      value: "&6%victim% &e[%victim-lives%]&6 was killed by %attacker% &e[%attacker-lives%]"
+    death-message: "&6%victim% &e[%victim-lives%]&6 was killed by %attacker% &e[%attacker-lives%]"
     # death-message defines the message that sends in chat for all players, disabling this will use the default options for the server.
     # Note: to turn off death messages, use the command "/gamerule showDeathMessages false"
 
@@ -106,16 +84,11 @@ Kills:
     # determines if lifesteal will run on other death causes
 
     # configure the messages for the victim
-    victim:
-      chat-message:
-        enabled: true
-        value: "&6You have died. Lives: &c%victim-lives%"
+    victim: "&6You have died. Lives: &c%victim-lives%"
 
       # chat-message value determines the message sent into chat to the victim
 
-    death-message:
-      enabled: true
-      value: "&6%victim% &e[%victim-lives%]&6 died"
+    death-message: "&6%victim% &e[%victim-lives%]&6 died"
     # death-message defines the message that sends in chat for all players, disabling this will use the default options for the server.
     # Note: to turn off death messages, use the command "/gamerule showDeathMessages false"
 
@@ -125,15 +98,11 @@ Out-Of-Lives:
 
   # This section is designated to the configuration of values that are used after someone runs out of lives.
 
-  message:
-    enabled: true
-    value: "&c&lYou have run out of lives!"
+  message: "&c&lYou have run out of lives!"
 
   # message refers to the message the player will be sent when their lives are out
 
   command:
-    enabled: false
-    value:
       - "say %player% has run out of lives"
   # command refers to a list of console commands that will be run when a player runs out of lives
 
@@ -162,7 +131,7 @@ Crafting:
         - "§cLifesteal Heart"
         - "§7Right click to use"
 
-  # this is were it gets confusing, so bear with me
+  # this is where it gets confusing, so bear with me
 
   shape:
     - " A "
@@ -201,7 +170,7 @@ Crafting:
   # [DIAMOND_BLOCK] [REDSTONE] [DIAMOND_BLOCK]
   # [AIR] [GLOWSTONE_DUST] [AIR]
 
-  # hopefully this makes sense, if you have trouble, do not feel scared to ask in the Discord server (#support) -> https://www.echology.page/socials/discord
+  # hopefully this makes sense, if you have trouble, do not feel scared to ask in the Discord server (#support) -> https://x.echology.page/discord
 
   auto-version: false
   # this will automatically replace your set items with ones up to date with the server version
