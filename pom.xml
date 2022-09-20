@@ -78,30 +78,16 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.github.Echological</groupId>
-            <artifactId>MinehutService</artifactId>
-            <version>1.5.3</version>
-            <scope>compile</scope>
-        </dependency>
-
-        <dependency>
             <groupId>com.konghq</groupId>
             <artifactId>unirest-java</artifactId>
-            <version>3.13.4</version>
+            <version>3.13.11</version>
             <classifier>standalone</classifier>
         </dependency>
-
-<!--        <dependency>-->
-<!--            <groupId>io.papermc.paper</groupId>-->
-<!--            <artifactId>paper-api</artifactId>-->
-<!--            <version>1.17.1-R0.1-SNAPSHOT</version>-->
-<!--            <scope>provided</scope>-->
-<!--        </dependency>-->
 
         <dependency>
             <groupId>org.bstats</groupId>
             <artifactId>bstats-bukkit</artifactId>
-            <version>2.2.1</version>
+            <version>3.0.0</version>
             <scope>compile</scope>
         </dependency>
 

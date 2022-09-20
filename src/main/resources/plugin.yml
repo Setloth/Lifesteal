@@ -5,27 +5,3 @@ api-version: 1.17
 author: Echology
 website: https://www.echology.page
 description: Add combat-based lifesteal to your server! Gain lives by getting kills, lose lives by being killed.
-#commands:
-#  lifesteal:
-#    aliases:
-#      - steal
-#      - lives
-#    usage: /lifesteal help
-#
-#permissions:
-#  lifesteal.*:
-#    children:
-#      - lifesteal.command.*
-#
-#  lifesteal.command.*:
-#    children:
-#      - lifesteal.command.reload
-#      - lifesteal.command.lives
-#      - lifesteal.command.lives.set
-#    description: Allows top access to the /lifesteal command, further access is granted with its children
-#  lifesteal.command.reload:
-#    description: Allows access to /lifesteal reload
-#  lifesteal.command.lives:
-#    description: Allows access to /lifesteal lives
-#  lifesteal.command.lives.set:
-#    description: Allows you to set someone's lives via /lifesteal lives {player} [(add|subtract)] {number}
