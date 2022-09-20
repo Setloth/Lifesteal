@@ -1,10 +1,10 @@
 # Lifesteal
 
-Lifesteal is a [Minehut Product](https://www.echology.page/socials/lifesteal) that brings Lifesteal to your server!
+Lifesteal is a [Minehut Product](https://x.echology.page/lifesteal) that brings Lifesteal to your server!
+
+> Note, there is now a SpigotMC page for the plugin, [here](https://www.spigotmc.org/resources/lifesteal.105373/)
 
 > Works for **Paper/Spigot** servers on **1.17 - 1.19**
->
-> This product can only be used on a **[Minehut](https://minehut.com) server**
 
 ## Wiki
 
