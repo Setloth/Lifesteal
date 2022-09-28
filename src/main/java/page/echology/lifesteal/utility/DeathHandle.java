@@ -97,7 +97,7 @@ public class DeathHandle {
             return;
         }
         int lossMult = 1;
-        if (Config.LOSS_ENABLED.value(Boolean.class)) lossMult = Config.LOSS.value(Number.class).intValue();
+        if (Config.LOSS.value(Number.class) != null && Config.LOSS.value(Number.class).intValue() != 0) lossMult = Config.LOSS.value(Number.class).intValue();
         int lowerValue = Config.LOWER.value(Number.class).intValue();
         if (Config.LOWER.value() != null && pAttr.getBaseValue() - lossMult <= lowerValue) {
             if (Config.LIVES_MESSAGE.value() != null && Config.LIVES_MESSAGE.value() != "") {
