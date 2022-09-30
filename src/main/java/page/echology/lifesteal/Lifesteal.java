@@ -108,7 +108,7 @@ public final class Lifesteal extends JavaPlugin {
     }
 
     public static void warnOutdated(CommandSender sender) {
-        sender.spigot().sendMessage(Utils.colored("\n\n&6&l[!] &r&c&oLifesteal is outdated! Please update it via the Minehut dashboard. If you do not update, it may stop working, and you will not receive the latest improvements. \n&7Current installed version: &e&l"+Lifesteal.VERSION +"&r&7\nLatest released version: &e&l"+Lifesteal.CURRENT+"\n\n"));
+        sender.spigot().sendMessage(Utils.colored("\n\n&6&l[!] &r&c&oLifesteal is outdated! I heavily suggest you update to receive the latest fixes and improvements! \n&7Download link (GitHub): &bhttps://github.com/Sploric/Lifesteal/releases/latest \n&7Current installed version: &e&l"+Lifesteal.VERSION +"&r&7\nLatest released version: &e&l"+Lifesteal.CURRENT+"\n\n"));
     }
     public static void warnOutdated() {
         warnOutdated(Bukkit.getConsoleSender());

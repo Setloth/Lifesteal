@@ -2,14 +2,13 @@ package page.echology.lifesteal.command;
 
 import dev.triumphteam.cmd.bukkit.annotation.Permission;
 import dev.triumphteam.cmd.core.BaseCommand;
-import dev.triumphteam.cmd.core.annotation.*;
+import dev.triumphteam.cmd.core.annotation.Command;
+import dev.triumphteam.cmd.core.annotation.CommandFlags;
+import dev.triumphteam.cmd.core.annotation.Flag;
+import dev.triumphteam.cmd.core.annotation.SubCommand;
 import dev.triumphteam.cmd.core.flag.Flags;
 import dev.triumphteam.gui.components.GuiType;
 import dev.triumphteam.gui.guis.Gui;
-import net.kyori.adventure.text.Component;
-import net.md_5.bungee.api.chat.ClickEvent;
-import net.md_5.bungee.api.chat.HoverEvent;
-import net.md_5.bungee.api.chat.hover.content.Content;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.attribute.Attribute;
@@ -18,14 +17,12 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.ShapedRecipe;
 import page.echology.lifesteal.Lifesteal;
 import page.echology.lifesteal.config.Config;
 import page.echology.lifesteal.utility.Utils;
 
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.logging.Logger;
 
 @Command("lifesteal")
 public class Main extends BaseCommand {
@@ -158,7 +155,7 @@ public class Main extends BaseCommand {
 
 
 
-        Gui gui = Gui.gui(GuiType.WORKBENCH).title(Component.text("Configure Crafting")).create();
+        Gui gui = Gui.gui(GuiType.WORKBENCH).create();
         gui.enableAllInteractions();
 
         gui.open(player);
