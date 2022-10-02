@@ -74,9 +74,7 @@ public final class Lifesteal extends JavaPlugin {
 
             BukkitCommandManager<CommandSender> manager = BukkitCommandManager.create(this);
 
-            manager.registerCommand(
-                    new Main()
-            );
+            manager.registerCommand(new Main());
 
 
             try {

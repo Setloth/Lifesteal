@@ -2,10 +2,7 @@ package page.echology.lifesteal.command;
 
 import dev.triumphteam.cmd.bukkit.annotation.Permission;
 import dev.triumphteam.cmd.core.BaseCommand;
-import dev.triumphteam.cmd.core.annotation.Command;
-import dev.triumphteam.cmd.core.annotation.CommandFlags;
-import dev.triumphteam.cmd.core.annotation.Flag;
-import dev.triumphteam.cmd.core.annotation.SubCommand;
+import dev.triumphteam.cmd.core.annotation.*;
 import dev.triumphteam.cmd.core.flag.Flags;
 import dev.triumphteam.gui.components.GuiType;
 import dev.triumphteam.gui.guis.Gui;
@@ -26,6 +23,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 @Command("lifesteal")
 public class Main extends BaseCommand {
+
+    @Default
+    public void mainCmd(CommandSender sender) {
+        sender.spigot().sendMessage(Utils.component("&e&lLifesteal Command\n\n&6/lifesteal lives (player) &7- check someone's lives\n&6/lifesteal lives (player) -a (number) &7- add to someone's lives\n&6/lifesteal lives (player) -s (number) &7- set someone's lives\n&6/lifesteal withdraw (number) &7- withdraw lives as items\n&6/lifesteal config &7- configure the plugin crafting\n").create());
+    }
 
     @SubCommand("withdraw")
     public void withdraw(CommandSender sender, int amount) {
@@ -86,7 +88,7 @@ public class Main extends BaseCommand {
     }
 
     @SubCommand("reload")
-    @Permission("lifesteal.command.reload")
+    @Permission({"lifesteal.command.reload"})
     public void reload(CommandSender sender) {
 
         sender.spigot().sendMessage(Utils.colored("&6Reloading configuration..."));
@@ -101,7 +103,7 @@ public class Main extends BaseCommand {
     }
 
     @SubCommand("lives")
-    @Permission("lifesteal.command.lives")
+    @Permission({"lifesteal.command.lives"})
     @CommandFlags({@Flag(flag="s", longFlag="set", argument=int.class), @Flag(flag="a", longFlag="add", argument=int.class)})
     public void lives(CommandSender sender, Player target, Flags flags) {
 
@@ -149,7 +151,7 @@ public class Main extends BaseCommand {
     }
 
     @SubCommand("config")
-    @Permission("lifesteal.command.config")
+    @Permission({"lifesteal.command.config"})
     public void config(CommandSender sender) {
         if (!(sender instanceof Player player)) return;
 
@@ -174,9 +176,9 @@ public class Main extends BaseCommand {
 
             }
 
-            for (int i = 0; i < cleansed.size(); i++) {
-                ItemStack item = cleansed.get(i);
-                if (!toShape.containsValue(item) && !item.getType().isAir()) toShape.put((toShape.size()+1)+"", item);
+            for (ItemStack item : cleansed) {
+                if (!toShape.containsValue(item) && !item.getType().isAir())
+                    toShape.put((toShape.size() + 1) + "", item);
 
                 String k = getKeyByValue(toShape, item);
 
