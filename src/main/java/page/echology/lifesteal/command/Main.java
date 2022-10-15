@@ -6,6 +6,7 @@ import dev.triumphteam.cmd.core.annotation.*;
 import dev.triumphteam.cmd.core.flag.Flags;
 import dev.triumphteam.gui.components.GuiType;
 import dev.triumphteam.gui.guis.Gui;
+import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.attribute.Attribute;
@@ -157,7 +158,7 @@ public class Main extends BaseCommand {
 
 
 
-        Gui gui = Gui.gui(GuiType.WORKBENCH).create();
+        Gui gui = Gui.gui(GuiType.WORKBENCH).title(Component.text("Configure Crafting")).create();
         gui.enableAllInteractions();
 
         gui.open(player);
