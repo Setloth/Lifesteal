@@ -1,6 +1,6 @@
 # Lifesteal
 
-Minehut has shut down its community marketplace, and thus this project will no longer be maintained. Thank you all!
+Minehut has shut down its community marketplace (circa 2022), and thus this project will no longer be maintained. Thank you all!
 
 Lifesteal is a [Minehut Product (!invalid link)](https://x.echology.page/lifesteal) that brings Lifesteal to your server!
 
